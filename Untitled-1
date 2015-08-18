@@ -1,0 +1,52 @@
+join.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    if(join.getText().toString().equals("Join")){
+                        final ParseObject join = new ParseObject("Join");
+                        join.put("joiner", ParseUser.getCurrentUser().getObjectId());
+                        join.put("post",object.getObjectId());
+                        join.put("name",object.getString("name"));
+                        join.put("poster",object.getString("poster"));
+                        join.put("picture",object.getString("picture"));
+                        join.put("desc",object.getString("desc"));
+                        join.put("count",object.getNumber("count"));
+                        join.put("date",object.getString("date"));
+
+                        Toast.makeText(Event.this,
+                                "Joining Event",
+                                Toast.LENGTH_LONG).show();
+                        join.saveInBackground(new SaveCallback() {
+                            @Override
+                            public void done(ParseException e) {
+                                if (e != null) {
+                                    Log.e("TAG", Log.getStackTraceString(e));
+                                    new AlertDialog.Builder(Event.this)
+                                            .setIcon(android.R.drawable.ic_dialog_alert)
+                                            .setTitle("Join failed")
+                                            .setMessage("Check network connection or try again later.")
+                                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                                @Override
+                                                public void onClick(DialogInterface dialog, int which) {
+                                                }
+
+                                            })
+                                            .show();
+                                } else {
+                                    Log.e("TAG", Log.getStackTraceString(e));
+                                    object.increment("count");
+                                    Event.this.join.setText("Unjoin");
+                                    object.saveInBackground(new SaveCallback() {
+                                        @Override
+                                        public void done(ParseException e) {
+
+                                        }
+                                    });
+                                }
+
+                            }
+                        });
+                    }
+
+
+            }});

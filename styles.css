@@ -1,0 +1,203 @@
+@import "reset.css";
+@import "install.css";
+::selection,
+::-moz-selection {
+  background: #00aa84;
+  /* WebKit/Blink Browsers */
+}
+::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.clear {
+  background-color: white;
+  outline: none;
+  border: 0;
+  display: block;
+  -webkit-appearance: none;
+  box-sizing: none;
+}
+.transition {
+  transition: 0.2s all linear;
+}
+html,
+body {
+  background-color: #00bf97;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Whitney A', 'Whitney B';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12pt;
+  text-align: center;
+  color: #fff;
+}
+#content {
+  height: 100%;
+  width: 100%;
+  max-width: 680px !important;
+  min-width: 320px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+#content #top {
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  background-color: #00bf97;
+}
+#content #top header {
+  width: 320px;
+  height: 316px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -160px;
+  vertical-align: middle;
+}
+#content #top header h1 {
+  color: white;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 30px;
+  padding: 0;
+  font-weight: 900;
+  font-size: 72pt;
+  text-transform: lowercase;
+  text-shadow: 0 2px 0 #00aa84;
+  transition: 0.2s all linear;
+}
+#content #top header p {
+  font-weight: 100;
+  width: 100%;
+  display: block;
+  line-height: 1.3;
+  text-align: center;
+  color: #d1ece6;
+  font-size: 26pt;
+  text-shadow: 0 2px 0 #00aa84;
+}
+#content #top header p strong {
+  color: white;
+}
+#content #top header button {
+  background-color: white;
+  outline: none;
+  border: 0;
+  display: block;
+  -webkit-appearance: none;
+  box-sizing: none;
+  cursor: pointer;
+  height: 70px;
+  width: 320px;
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 16pt;
+  color: #00bf97;
+  padding: 10px;
+  box-shadow: 0 2px 0px 0px #00aa84;
+  border-radius: 6px;
+  transition: 0.2s all linear;
+}
+#content #top header button span {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  display: block;
+  margin: 0 auto;
+}
+#content #top header button span img#apple {
+  height: 36px;
+  width: 30px;
+  padding-right: 30px;
+  display: inline;
+  vertical-align: middle;
+  margin-top: -10px;
+}
+#content #top header button:hover {
+  background-color: ##eaeaea;
+}
+#content #top header button:active {
+  box-shadow: inset 0 2px 0px 0px #00aa84;
+}
+#content #top header button:active span {
+  margin-top: 2px;
+}
+#content #top header #invite {
+  display: none;
+}
+#content #top header #invite input#code {
+  background-color: white;
+  outline: none;
+  border: 0;
+  display: block;
+  -webkit-appearance: none;
+  box-sizing: none;
+  margin-top: 30px;
+  width: 300px;
+  border: 2px solid white;
+  height: 50px;
+  background: transparent;
+  color: white;
+  background-repeat: no-repeat;
+  text-align: center;
+  font-size: 16pt;
+  padding: 10px;
+  border-radius: 6px;
+}
+#content #top header #invite input#code::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+#content #top header #invite input#code:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+#content #top header #invite input#code:focus {
+  background-image: none;
+  color: white;
+}
+#content #top header #invite input#code.error,
+#content #top header #invite input#code.check {
+  padding-right: 50px;
+  width: 260px;
+}
+#content #top header #invite input#code.error {
+  background-image: url("../img-homepage/x.png") !important;
+  background-position: 282px 50%;
+  background-size: 22px;
+  background-repeat: no-repeat;
+}
+#content #top header #invite input#code.check {
+  background-image: url("../img-homepage/checkmark.png") !important;
+  background-repeat: no-repeat;
+  background-position: 282px 50%;
+  background-size: 22px;
+}
+#content #bottom {
+  position: absolute;
+  bottom: 0;
+  padding-top: 30px;
+  max-width: 680px;
+  width: 100%;
+  z-index: 1;
+}
+#content #bottom img#display {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+}
+@media screen and (orientation: landscape) and (max-device-width: 667px) {
+  #content #bottom {
+    height: 0;
+    display: none;
+  }
+}
+#install {
+  display: none;
+}

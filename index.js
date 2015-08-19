@@ -5,7 +5,7 @@ function size() {
         amt = $(window).height() -$("#bottom").outerHeight() - $("header").height()
         console.log(amt);
         $("#bottom").css({
-            'margin-bottom': -454
+            'margin-bottom': -470
         });
     } else {
         $("#bottom").css({
